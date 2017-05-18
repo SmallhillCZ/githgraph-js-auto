@@ -2,6 +2,9 @@
 <html>
 
   <head>
+    
+    <title>GitHub => GitgraphJS auto script</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.11.1/gitgraph.min.css">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -12,10 +15,19 @@
 
   <body>
     
+    <h1>1) Get data</h1>
+    <p>Open developer console (F12), navigate to https://github.com/:user/:repository/network and copy contents from the file chunk?nethash=:some-code</p>
+      
     <form>
-      <textarea id="input"></textarea>
+      
+      <h1>2) Insert data into this textarea</h1>
+      <textarea id="input"></textarea><br>
+      
+      <h1>3) Press this button</h1>
       <button type="submit">Show graph</button>
     </form>
+    
+    <h1>4) See the chart</h1>
     
     <canvas id="gitGraph"></canvas>
     
