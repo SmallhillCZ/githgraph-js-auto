@@ -15,7 +15,11 @@
 
   <body>
     
-    <h1>1) Get data</h1>
+    <h1>Simple GitHub visualizer using GitGraphJS</h1>
+    
+    <p>Just follow the steps. For now doesn't work with big repos, because their data is loaded in multiple requests.</p>
+    
+    <h2>1) Get data</h2>
     <p>The data we need are downloadable from GitHub, but for some reason downloading is limited by code and not possible to do in a standard manner. One way to do it is to download it with the Network graph page and save it.</p>
     <ol>
       <li>Open developer tools panel (press F12 key while in your browser, more info: https://developers.google.com/web/tools/chrome-devtools/console/)</li>
@@ -26,10 +30,10 @@
       
     <form>
       
-      <h1>2) Insert data into this textarea (CTRL+V)</h1>
+      <h2>2) Insert data into this textarea (CTRL+V)</h2>
       <textarea id="input"></textarea><br>
       
-      <h1>3) Make some tweaks</h1>
+      <h2>3) Make some tweaks</h2>
       
       Orientation:
       <select id="orientation">
@@ -55,12 +59,12 @@
       
       
       
-      <h1>4) Press this button</h1>
+      <h2>4) Press this button</h2>
       <button type="button" id="showGraphButton">Show graph</button>
     </form>
     
-    <h1>5) Wait</h1>
-    <h1>6) See the chart:</h1>
+    <h2>5) Wait</h2>
+    <h2>6) See the chart:</h2>
     
     <canvas id="gitGraph"></canvas>
     
