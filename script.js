@@ -1,6 +1,6 @@
 $(document).ready(function(){
   
-    $("form").submit(function(){
+    $("#showGraphButton").click(function(){
       
       var data = JSON.parse($("#input").val());
       
@@ -104,8 +104,6 @@ $(document).ready(function(){
         
         
       }
-      
-      return false;
     });
 
 });
