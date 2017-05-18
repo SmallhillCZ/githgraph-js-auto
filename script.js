@@ -14,7 +14,8 @@ $(document).ready(function(){
       
       if(template === "smallhill"){
         template = new GitGraph.Template({
-          colors: ["#979797", "#008fb5", "#f1c109"],
+          arrow: {active:true},
+          colors: ["#000000","#979797", "#008fb5", "#f1c109"],
           branch: {
             lineWidth: 10,
             spacingX: 50,
@@ -26,7 +27,11 @@ $(document).ready(function(){
               size: 14
             },
             message: {
-              font: "normal 14pt Arial"
+              font: "normal 14pt Arial",
+              display:true,
+              messageAuthorDisplay: false,
+              messageBranchDisplay: false,
+              messageHashDisplay: true
             },
             shouldDisplayTooltipsInCompactMode: false, // default = true
             tooltipHTMLFormatter: function (commit) {
