@@ -1,11 +1,5 @@
 $(document).ready(function(){
   
-    var gitgraph = new GitGraph({
-        template: "metro",
-        orientation: "vertical",
-        mode: "compact"
-      });
-  
     $("form").submit(function(){
       
       var data = JSON.parse($("#input").val());
@@ -16,7 +10,11 @@ $(document).ready(function(){
     
       var parentBranch = {};
       
-      
+      var gitgraph = new GitGraph({
+        template: "metro",
+        orientation: "vertical",
+        mode: "compact"
+      });
       
       function getBranch(parent){
         if(parentBranch[parent]) return parentBranch[parent];
@@ -75,6 +73,8 @@ $(document).ready(function(){
         
         
       }
+      
+      return false;
     });
 
 });
