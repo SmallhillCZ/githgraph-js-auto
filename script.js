@@ -11,9 +11,9 @@ $(document).ready(function(){
       var parentBranch = {};
       
       var gitgraph = new GitGraph({
-        template: "metro",
-        orientation: "vertical",
-        mode: "compact"
+        template: $("#theme").val(),
+        orientation: $("#orientation").val(),
+        mode: $("#display").val()
       });
       
       function getBranch(parent){
