@@ -10,8 +10,34 @@ $(document).ready(function(){
     
       var parentBranch = {};
       
+      var template = $("#theme").val();
+      
+      if(template === "smallhill"){
+        template = new GitGraph.Template({
+          colors: ["#979797", "#008fb5", "#f1c109"],
+          branch: {
+            lineWidth: 10,
+            spacingX: 50,
+            labelRotation: 0
+          },
+          commit: {
+            spacingY: -80,
+            dot: {
+              size: 14
+            },
+            message: {
+              font: "normal 14pt Arial"
+            },
+            shouldDisplayTooltipsInCompactMode: false, // default = true
+            tooltipHTMLFormatter: function (commit) {
+              return commit.message;
+            }
+          }
+        });
+      }
+      
       var gitgraph = new GitGraph({
-        template: $("#theme").val(),
+        template: template,
         orientation: $("#orientation").val(),
         mode: $("#display").val()
       });
@@ -31,7 +57,7 @@ $(document).ready(function(){
       function createBranch(branch,space){
         return gitgraph.branch({
           parentBranch: branch,
-          name: branchNames.pop() || "branch",
+          name: branchNames.pop() || "branch " + space,
           column: space
           });
       }
