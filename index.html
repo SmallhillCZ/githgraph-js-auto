@@ -16,11 +16,12 @@
   <body>
     
     <h1>1) Get data</h1>
+    <p>The data we need are downloadable from GitHub, but for some reason downloading is limited by code and not possible to do in a standard manner. One way to do it is to download it with the Network graph page and save it.</p>
     <ol>
-      <li>Open developer console (F12)</li>
-      <li>Navigate to https://github.com/:user/:repository/network</li>
-      <li>In the developer console click the Network tab, select the file chunk?nethash=:some-code, on the right side click the Response tab</li>
-      <li>Copy the code in the Response tab to clipboard (CTRL+C)</li>
+      <li>Open developer tools panel (press F12 key while in your browser, more info: https://developers.google.com/web/tools/chrome-devtools/console/)</li>
+      <li>Navigate your browser to https://github.com/:user/:repository/network</li>
+      <li>In the developer console click the Network tab, select the line which looks like ```chunk?nethash=:some-code``` and on the right side click the Response tab, contents of the file should appear</li>
+      <li>Select the entire line of code (best using select all or CRTL+A) in the Response tab and copy to clipboard (CTRL+C)</li>
     </ol>
       
     <form>
