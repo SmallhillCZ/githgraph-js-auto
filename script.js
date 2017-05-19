@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  $("#addTextarea").click(function(){$(this).prepend("<textarea class=\"input\"></textarea><br>");});
+  $("#addTextarea").click(function(){$(this).before("<textarea class=\"input\"></textarea><br>");});
 
   $("#showGraphButton").click(function(){
 
