@@ -2,39 +2,48 @@
 <html>
 
   <head>
-    
+
     <title>GitHub => GitgraphJS auto script</title>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.11.1/gitgraph.min.css">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.11.1/gitgraph.min.js"></script>
-    
+
     <script src="script.js"></script>
   </head>
 
   <body>
-    
+
     <h1>Simple GitHub visualizer using GitGraphJS</h1>
-    
+
     <p>Just follow the steps. For now doesn't work with big repos, because their data is loaded in multiple requests.</p>
-    
-    <h2>1) Get data</h2>
-    <p>The data we need are downloadable from GitHub, but for some reason downloading is limited by code and not possible to do in a standard manner. One way to do it is to download it with the Network graph page and save it.</p>
-    <ol>
-      <li>Open developer tools panel (press F12 key while in your browser, more info: https://developers.google.com/web/tools/chrome-devtools/console/)</li>
-      <li>Navigate your browser to https://github.com/:user/:repository/network</li>
-      <li>In the developer console click the Network tab, select the line which looks like "chunk?nethash=:some-code" and on the right side click the Response tab, contents of the file should appear</li>
-      <li>Select the entire line of code (best using select all or CRTL+A) in the Response tab and copy to clipboard (CTRL+C)</li>
-    </ol>
-      
+
     <form>
-      
-      <h2>2) Insert data into this textarea (CTRL+V)</h2>
-      <textarea id="input"></textarea><br>
-      
-      <h2>3) Make some tweaks</h2>
-      
+
+      <h2>1) Get data</h2>
+      <p>The data we need are downloadable from GitHub, but for some reason downloading is limited by code and not possible to do in a standard manner. One way to do it is to download it with the Network graph page and save it.</p>
+      <ol>
+        <li>Open developer tools panel (press F12 key while in your browser, more info: https://developers.google.com/web/tools/chrome-devtools/console/)</li>
+        <li>Navigate your browser to https://github.com/:user/:repository/network</li>
+        <li>In the developer console click the Network tab</li>
+        <li>
+          Copy the data from files which look like "chunk?nethash=:some-code"
+          <ol style="list-style-type: lower-alpha;">
+            <li>Select the line  and on the right side click the Response tab, contents of the file should appear</li>
+            <li>Select the entire line of code (best using select all or CRTL+A) in the Response tab and copy to clipboard (CTRL+C)</li>
+            <li>Insert data into this textarea (CTRL+V)</li>
+            <li>If there were more files meeting the criterion, click "Add textarea" and repeat from a)</li>
+          </ol>
+        </li>
+      </ol>
+
+      <textarea class="input"></textarea><br>
+
+      <a id="addTextarea">Add textarea</a>
+
+      <h2>2) Make some tweaks</h2>
+
       Orientation:
       <select id="orientation">
         <option>vertical-reverse</option>
@@ -42,32 +51,32 @@
         <option>horizontal-reverse</option>
         <option>vertical</option>
       </select><br>
-      
+
       Theme:
       <select id="theme">
         <option>blackarrow</option>
         <option selected>metro</option>
         <option>smallhill</option>
       </select><br>
-      
+
       Display mode:
-       <select id="display">
+      <select id="display">
         <option selected>compact</option>
         <option>extended</option>
       </select>
-      
-      
-      
-      
-      <h2>4) Press this button</h2>
+
+
+
+
+      <h2>3) Press this button</h2>
       <button type="button" id="showGraphButton">Show graph</button>
     </form>
-    
-    <h2>5) Wait</h2>
-    <h2>6) See the chart:</h2>
-    
+
+    <h2>4) Wait</h2>
+    <h2>5) See the chart:</h2>
+
     <canvas id="gitGraph"></canvas>
-    
+
   </body>
 
 </html>
