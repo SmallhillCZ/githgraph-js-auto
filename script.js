@@ -24,7 +24,7 @@ $(document).ready(function(){
     if(template === "smallhill"){
       template = new GitGraph.Template({
         arrow: {active:true},
-        colors: ["#000000","#979797", "#008fb5", "#f1c109"],
+        colors: ["#000000","#3498db", "#2ecc71", "#8e44ad","#f1c40f","#e67e22","#e74c3c"],
         branch: {
           lineWidth: 10,
           spacingX: 50,
