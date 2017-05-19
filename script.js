@@ -104,8 +104,15 @@ $(document).ready(function(){
       }
 
       if(commit.parents.length === 2){
-
-        getBranch(commit.parents[1][0]).merge(getBranch(commit.parents[0][0]),{ message: commit.message });
+        
+        if(commit.space === commit.parents[0][2]){
+          branch = getBranch(commit.parents[0][0]);
+          getBranch(commit.parents[1][0]).merge(branch,{ message: commit.message });
+        }
+        else{
+          branch = createBranch(getBranch(commit.parents[0][0]),commit.space);
+          getBranch(commit.parents[1][0]).merge(branch,{ message: commit.message });
+        }
 
         parentBranch[commit.id] = getBranch(commit.parents[0][0]);
 
