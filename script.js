@@ -114,7 +114,7 @@ $(document).ready(function(){
           getBranch(commit.parents[1][0]).merge(branch,{ message: commit.message });
         }
 
-        parentBranch[commit.id] = getBranch(commit.parents[0][0]);
+        parentBranch[commit.id] = branch;
 
       }
 
