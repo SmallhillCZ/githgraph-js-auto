@@ -10,6 +10,8 @@ $(document).ready(function(){
       var newData = JSON.parse($(this).val());
       if(newData && newData.commits.constructor === Array) data = data.concat(newData.commits);
     });
+    
+    data.sort(function(a,b){return a.time - b.time;});
 
     if(!data.length) return;
 
